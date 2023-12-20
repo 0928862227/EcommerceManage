@@ -6,7 +6,14 @@ const { verifyAccessToken, isAdmin ,isSales} = require('../middlewares/verifyTok
 
 router.post('/', [verifyAccessToken, isSales],ctrlsSales.createProduct);
 router.get('/', ctrlsProducts.getProducts);//video9-38:31
+router.put('/:pid', [verifyAccessToken, isAdmin],ctrlsProducts.updateProduct);//video9-43:01
+router.delete('/:pid', [verifyAccessToken, isAdmin], ctrlsProducts.deleteProduct);//video9-48:10 
+/* router.put('/:pid', [verifyAccessToken, isAdmin], upload.fields([
+    { name: 'images', maxCount: 10 },
+    { name: 'thumb', maxCount: 1 }
+]), ctrls.updateProduct); */
 router.get('/:pid',[verifyAccessToken, isAdmin], ctrlsProducts.getProduct);//video9-34:04
+
 /*router.post('/', [verifyAccessToken, isAdmin], upload.fields([
     { name: 'images', maxCount: 10 },
     { name: 'thumb', maxCount: 1 }
@@ -21,11 +28,8 @@ router.put('/variants/:pid', [verifyAccessToken, isAdmin], upload.fields([
     { name: 'images', maxCount: 10 },
     { name: 'thumb', maxCount: 1 }
 ]), ctrls.addVarriant);
-router.put('/:pid', [verifyAccessToken, isAdmin], upload.fields([
-    { name: 'images', maxCount: 10 },
-    { name: 'thumb', maxCount: 1 }
-]), ctrls.updateProduct);
-router.delete('/:pid', [verifyAccessToken, isAdmin], ctrls.deleteProduct);
+
+
 
 
 */

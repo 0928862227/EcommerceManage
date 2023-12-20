@@ -36,6 +36,7 @@ const getProduct = asyncHandler(async (req, res) => {
     })
 })
 
+//-----------------Hàm get nhiều sản phẩm bất kì --------------------------\\
 // Filtering, sorting & pagination
 const getProducts = asyncHandler(async (req, res) => {
     // try {
@@ -130,7 +131,9 @@ const getProducts = asyncHandler(async (req, res) => {
     //     return res.status(500).json({ success: false, error: err.message });
     // }
 });
-/*
+
+//-----------------------Hàm chỉnh sửa thông tin sản phẩm .dành cho Admin-------------------\\
+
 const updateProduct = asyncHandler(async (req, res) => {
     const { pid } = req.params
     const files = req?.files
@@ -140,17 +143,21 @@ const updateProduct = asyncHandler(async (req, res) => {
     const updatedProduct = await Product.findByIdAndUpdate(pid, req.body, { new: true })
     return res.status(200).json({
         success: updatedProduct ? true : false,
-        mes: updatedProduct ? 'Cập nhật thành công!' : 'Cannot update product'
+        mes: updatedProduct ? 'Chỉnh sửa sản phẩm thành công!' : 'Không thể chỉnh sửa sản phẩm!'
     })
 })
+
+//--------------------------Hàm xóa sản phẩm , dành cho Admin-------------------------\\
 const deleteProduct = asyncHandler(async (req, res) => {
     const { pid } = req.params
     const deletedProduct = await Product.findByIdAndDelete(pid)
     return res.status(200).json({
         success: deletedProduct ? true : false,
-        mes: deletedProduct ? 'Xóa thành công' : 'Không thể xóa sản phẩm'
+        mes: deletedProduct ? 'Xóa sản phẩm thành công' : 'Không thể xóa sản phẩm'
     })
 })
+
+/*
 const ratings = asyncHandler(async (req, res) => {
     const { _id } = req.user;
     const { star, comment, pid, updatedAt } = req.body;
@@ -218,10 +225,9 @@ module.exports = {
     createProduct,
     getProduct,
     getProducts,
-    /*
     updateProduct,
     deleteProduct,
-    ratings,
+   /* ratings,
     uploadImgsPro,
     addVarriant*/
 } 

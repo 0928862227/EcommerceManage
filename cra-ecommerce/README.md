@@ -129,7 +129,7 @@ Video 3 : Hash password in mongodb
     lý thuyết muối vào cốc nước 10:50
     vào file models/user line78
     function pre(việc sẽ làm ,việc đang làm)
-    fuction bcrypt.genSaltSync(số lượng kí tự) : mã hóa mật khẩu không đọc được
+    function bcrypt.genSaltSync(số lượng kí tự) : mã hóa mật khẩu không đọc được
     xóa 1 documents trong mongodb 13:29
     function isModified giúp phát hiện thay đổi mật khẩu 17:22
     tạo file middlewares/errHandler để custom lỗi trên terminal để dễ hiểu 39:32
@@ -213,7 +213,7 @@ Server sẽ kiểm tra token từ giao diện có giống với token mà server
 
     fix bug thành công 
     Design email theo chủ đề của project 
-    10. Viết fuction resetPassword xử lí nút kích hoạt mật khẩu trong mail 51:38
+    10. Viết function resetPassword xử lí nút kích hoạt mật khẩu trong mail 51:38
     11. Test function này trên postman 1:02:46
 
 Video 8 : CRUD user /Phân quyền admin (Creat là resiger ,Read là login )
@@ -223,25 +223,32 @@ Video 8 : CRUD user /Phân quyền admin (Creat là resiger ,Read là login )
     4. Trao quyền admin cho 1 user trên mongodb 17:17 
         Admin là 1945 
         User là 1975
+        Sales là 1999
     5. Viết function delete user trong file controller/user 21:54 (chỉ dành cho admin)
     6. Test trong postman (err vì code khác vid)
-    7. Viết function updateUser trong file controller/user 28:47
-    8. Viết function updateUserByAdmin trong file controller/user 40:00
+    7. Viết function updateUser trong file controller/user 28:47,vào router gọi function
+    8. Viết function updateUserByAdmin trong file controller/user 40:00,vào router gọi function
     9. Vào postman test đổi tên user thử 44:10
 
 Video 9 : CRUD product 
 
     1. Tạo file controller/product để xử lí 1:20
     2. Tạo file models/product để lưu trữ 2:00=>12:45
-    3. Viết fuction createProdcut 13:31 16:54
+    3. Viết function createProdcut 13:31 16:54
     4. Tải thư viện npm i slugify giúp 16:12
     5. Tạo file routes/product 23:23
-    6. Tạo folder product trong postman 25:44
+    6. Tạo folder product trong postman 25:44 ,vào router gọi function
     7. Tạo 1 sản phẩm trên postman 31:40
-    8. Viết function lấy 1 sản phẩm bất kì 32:03
+    8. Viết function lấy 1 sản phẩm bất kì 32:03,vào router gọi function
     9. Tạo request get product trên postman 35:47
-    10.Viết function lấy nhiều sản phẩm (getProducts) 36:17
-    12.Tạo request getProducts trên postman 38:42
+    10.Viết function lấy nhiều sản phẩm (getProducts) 36:17,vào router gọi function
+    11.Tạo request getProducts trên postman 38:42
+    12.Viết function updateProduct trong controller/product 39:54 ,vào router gọi function
+    13.Tạo request updateProduct bằng id trên Postman 44:22
+    14.Viết function deleteProduct 47:08,vào router gọi function
+    15.Tạo request deleteProduct bằng id trên Postman 48:32
+
+Video 10: 
 
 
 

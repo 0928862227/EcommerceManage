@@ -334,12 +334,34 @@ const getAdmins = asyncHandler(async (req, res) => {
 
 //----------------------Xóa 1 Admin, dành cho admin----------------\\
 const deleteAdmin = asyncHandler(async (req, res) => {
+    const { aid } = req.params
+    if (!aid) throw new Error('Chưa nhập id admin')
+    const response = await Admin.findByIdAndDelete(uid)
+    return res.status(200).json({
+        success: response ? true : false,
+        mes: response ? `Admin có email ${response.email} đã được xóa` : 'Người dùng không bị xóa'
+    })
+})
+
+//----------------------Xóa 1 User, dành cho admin----------------\\
+const deleteUser = asyncHandler(async (req, res) => {
     const { uid } = req.params
-    if (!uid) throw new Error('Missing inputs')
+    if (!uid) throw new Error('Chưa nhập id người dùng')
     const response = await Admin.findByIdAndDelete(uid)
     return res.status(200).json({
         success: response ? true : false,
         mes: response ? `Người dùng có email ${response.email} đã được xóa` : 'Người dùng không bị xóa'
+    })
+})
+
+//----------------------Xóa 1 Sales, dành cho admin----------------\\
+const deleteSales = asyncHandler(async (req, res) => {
+    const { sid } = req.params
+    if (!sid) throw new Error('Chưa nhập id người bán hàng')
+    const response = await Admin.findByIdAndDelete(uid)
+    return res.status(200).json({
+        success: response ? true : false,
+        mes: response ? `Người bán hàng có email ${response.email} đã được xóa` : 'Người dùng không bị xóa'
     })
 })
 
@@ -478,6 +500,8 @@ module.exports = {
     resetPassword,
     getAdmins,
     deleteAdmin,
+    deleteUser,
+    deleteSales,
     updateAdmin,
     updateAdminByAdmin,
     

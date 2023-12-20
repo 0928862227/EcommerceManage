@@ -1,13 +1,17 @@
 const router = require('express').Router();
 const ctrls = require('../controllers/admin');
-//const { verifyAccessToken, isAdmin } = require('../middlewares/verifyToken');
+const { verifyAccessToken, isAdmin } = require('../middlewares/verifyToken');
 /*const upload = require('../config/cloudinary.config'); */
 //đây là những link api 
 router.post('/register', ctrls.register);//video2-38
 router.post('/login', ctrls.login);//video4-29:25
-/*router.get('/current', verifyAccessToken, ctrls.getCurrent);//video5-42:03
+router.get('/current', verifyAccessToken, ctrls.getCurrent);//video5-42:03
 router.post('/refreshtoken', ctrls.refreshAccessToken);//video6-21:29
 router.get('/logout', ctrls.logout);//video6-41:37
+router.delete('/:uid', [verifyAccessToken, isAdmin], ctrls.deleteUser);//video8-25:09 
+router.delete('/:aid', [verifyAccessToken, isAdmin], ctrls.deleteAdmin);
+router.delete('/:sid', [verifyAccessToken, isAdmin], ctrls.deleteSales);
+/*
 router.get('/forgotpassword', ctrls.forgotPassword);//video7-40:59
 router.put('/resetpassword', ctrls.resetPassword);//video7-1:02:58
 router.get('/', [verifyAccessToken, isAdmin], ctrls.getUsers);//video8-11:30
