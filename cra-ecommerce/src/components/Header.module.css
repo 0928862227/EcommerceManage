@@ -1,0 +1,131 @@
+/* Header.css */
+
+/* Header.module.css */
+
+.Header {
+  font-weight: 100;/* Trọng số phông chữ ốm gọn */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:linear-gradient(10000deg, #3533cd, #090a0b); /* Màu tím, bạn có thể điều chỉnh theo ý muốn */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.logo img {
+  max-width: 150px; /* Điều chỉnh kích thước hình logo theo ý muốn */
+  border-radius: 190px;
+}
+.fixSizeIcon {
+  font-size: 17px; /* Đặt kích thước mới của biểu tượng ở đây */
+}
+.search_bar {
+  flex-grow: 1; /* Thanh tìm kiếm chiếm phần còn lại của header */
+  margin: 0 20px 0 60px; /* Khoảng cách giữa logo và thanh tìm kiếm */
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.search_bar input {
+  flex-grow: 1;
+  background-color: #fff;
+  color: black;
+  border: none; 
+  border-color: #1356a2;
+  padding: 17px 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none; /* Loại bỏ đường viền khi input được chọn */
+}
+.search_bar button {
+  background:linear-gradient(10000deg, #3533cd, #090a0b);
+  color: #ffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin : 5px ;
+}
+.navbar_left ul {
+  list-style: none;
+  display: flex;
+  /*top: 0;  Đặt navbar ở phía trên cùng của màn hình */
+  top: -10px; /* Điều chỉnh khoảng cách từ trên xuống để tránh che 
+  phủ phần trên của trang */
+  left: 0; /* Đặt navbar ở phía trái của màn hình */
+  width: 50%; /* Chiều rộng 50% để nó chiếm toàn bộ chiều rộng màn hình */
+  position: fixed;
+  
+}
+.navbar_left a {
+  color: #fff;/* Màu chữ mặc định */
+  text-decoration: none; /* Loại bỏ gạch chân dưới của liên kết */
+  font-size: 12px; /* kích thước chữ*/
+  font-weight: bolder; /* chữ đậm */
+  transition: color 0.3s; /* Hiệu ứng màu chữ */
+}
+
+.navbar_left li {
+  margin-right: 10px;
+}
+.navbar_right ul {
+  list-style: none;
+  display: flex;
+  position: fixed;
+  top: -8px;
+  right: 0;
+  width: 50%; /* Chiếm 50% chiều rộng màn hình */
+  justify-content: flex-end; /* Đưa các mục về phía bên phải */
+}
+.navbar_right a {
+  color: #fff;
+  text-decoration: none; /* Loại bỏ gạch chân dưới của liên kết */
+  font-size: 12px; /* kích thước chữ*/
+  font-weight: bolder; /* chữ đậm */
+  transition: color 0.3s; /* Hiệu ứng màu chữ */
+}
+.navbar_left li,
+.navbar_right li {
+  margin-right: 10px;
+  position: relative;
+}
+.navbar_left li:after ,
+.navbar_right li:after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #ccc; /* Màu của thanh ngăn */
+  right: -5px; /* Điều chỉnh khoảng cách của thanh ngăn từ mục */
+  top: 4px;
+}
+.navbar_left li:hover a,
+.navbar_right li:hover a {
+  color: #090a0b; /* Màu chữ khi con trỏ chuột vào */
+}
+.navbar_right .lastItem::after ,
+.navbar_left .lastItem::after{
+  display: none;
+}
+.search_and_mini_nav {
+  display: flex;
+  align-items: center;
+}
+
+.icons_search{
+  display: flex;
+  margin:0 10px 0 10px;
+}
+
+.icons_cart > * {
+  margin:0 30px 0 30px;
+  display: flex;
+  
+}
+
+/* Thêm một số hiệu ứng hoặc kiểu dáng tùy thuộc vào yêu cầu của bạn */

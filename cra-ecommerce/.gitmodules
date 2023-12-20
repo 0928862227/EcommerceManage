@@ -1,0 +1,3 @@
+[submodule "cra-ecommerce"]
+	path = cra-ecommerce
+	url = https://github.com/0928862227/EcommerceManage.git
