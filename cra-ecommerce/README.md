@@ -110,6 +110,13 @@ Video 2 : Kết nối mongodb và tạo document user
                 current~hiện tại
                 Expires~ Hết hạn
                 utils~Tiện ích
+                Filtering products~Lọc sản phẩm
+                Sorting products~phân loại sản phẩm
+                Pagination products~phân trang sản phẩm
+                already~ đã làm 1 việc gì đó..
+                medium score~ điểm trung bình
+                ctrl~controller
+
 
     xử lí folder routes/user (32)
     xử lí folder routes/index (36:44) để gọi links api các file cùng cấp
@@ -248,7 +255,46 @@ Video 9 : CRUD product
     14.Viết function deleteProduct 47:08,vào router gọi function
     15.Tạo request deleteProduct bằng id trên Postman 48:32
 
-Video 10: 
+Video 10: Filtering, sorting products
+nguồn tham khảo: https://jeffdevslife.com/p/1-mongodb-query-of-advanced-filtering-sorting-limit-field-and-pagination-with-mongoose/
+https://jeffdevslife.com/p/1-mongodb-query-of-advanced-filtering-sorting-limit-field-and-pagination-with-mongoose/
+    1. Nâng cấp hàm getProducts trong controller/product 1:11~20:17,37:07
+    2. Viết src filtering trong hàm getProducts 20:22
+    3. Test src filtering trong postman (tìm bằng tên,giá tiền) 29:35,32:25,37:45
+    4. Viết src sorting trong hàm getProducts 43:03,50:34
+    5. Test src sorting trong postman (sắp xếp theo giá tiền,tăng,giảm,nhãn hiệu) 48:37,52:01
+
+Video 11: pagination products (2) & rating
+    1. Viết src fields limiting trong hàm getProducts 2:30
+    2. Test src fields limiting trong postman 4:36  
+    3. Viết src Pagination trong hàm getProducts 8:45
+    4. Test src Pagination trong hàm getProducts 18:14
+    5. Viét function rating trong controller/products 22:23,47:56
+    6. Test function rating trong postman 40:33,1:03:46
+   
+
+Video 12 CRUD categories products & categories blog
+    1. Test function rating trong postman 2:30 ,10:45
+    2. Viết thêm điểm trung bình(medium score) đánh giá trong function ratings 3:36
+    3. Tạo 1 đối tượng mới trong models là productCategory.js 12:28 để quản lý danh mục 
+    4. Tạo 2 đối tượng mới trong models là blog và blogCategory 12:42,36:56 để làm diễn đàn
+    5. Tạo 1 đối tương mới trong models là brand để quản lý những thương hiệu 13:34
+    6. Tạo 1 đối tương mới trong models là coupon để quản lý những mã giảm giá 13:20
+    7. Viết CRUD danh mục sản phẩm/productCategory  trong controller 16:20 ,trong router 19:31
+    8. Viết function creatCategory 18:29 .Test trong postman 21:54
+
+    gặp bug : function isAdmin trong file verifyToken trong Middleware chạy sai logic ,không phân biệt được Admin/User
+    fixbug : Nguyên nhân nằm ở gói asyncHandler không phân biệt được req của user hay admin nên đã thay đổi req thành reqAdmin ở trong file controller/admin để phân biệt
+
+    freetime : fix req trong controller/admin ,fix req trong controller/sales 
+    9. Viết function getCategory 26:29 31:33.Test trong pm 31:35
+    10.Viết function updateCategory 27:50 .Test trong pm 33:12
+    11.Viết function deleteCategory 29:45 .Test trong pm 34:40
+    12.Copy request trên thành blogCategory 35:53
+    13.Tạo file blogCategory in controller 
+    14.Tạo api blogCategory trong router 
+    15.Test CRUD của blogcategory trong ps C-41:00 ,U-42:22, D-42:28
+
 
 
 

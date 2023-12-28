@@ -56,14 +56,14 @@ var productSchema = new mongoose.Schema({
     },
     color: {
         type: String,
-        require: true,
+        enum:['Black','Grow','Red','Green','White','Sliver','Yellow','Gold']
     },
     //đánh giá sản phẩm
     ratings: [
         {
-            star: { type: Number },
-            postedBy: { type: mongoose.Types.ObjectId, ref: 'User' },
-            comment: { type: String }, //người vote để lại comment
+            star: { type: Number }, //sao
+            postedBy: { type: mongoose.Types.ObjectId, ref: 'User' }, //người đánh giá : user
+            comment: { type: String }, //người :user để lại comment
             updatedAt: {
                 type: Date,
             }
@@ -74,6 +74,14 @@ var productSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    //id đơn hàng đã bán sản phẩm này thành công
+    idBill:[
+        {
+            type: String,
+            boughtBy: { type: mongoose.Types.ObjectId, ref: 'User' },
+        },
+
+    ],
     variants: [
         {
             color: String,

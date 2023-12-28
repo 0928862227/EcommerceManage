@@ -8,6 +8,7 @@ router.post('/', [verifyAccessToken, isSales],ctrlsSales.createProduct);
 router.get('/', ctrlsProducts.getProducts);//video9-38:31
 router.put('/:pid', [verifyAccessToken, isAdmin],ctrlsProducts.updateProduct);//video9-43:01
 router.delete('/:pid', [verifyAccessToken, isAdmin], ctrlsProducts.deleteProduct);//video9-48:10 
+router.put('/ratings', verifyAccessToken, ctrlsProducts.ratings);//video11-24:29
 /* router.put('/:pid', [verifyAccessToken, isAdmin], upload.fields([
     { name: 'images', maxCount: 10 },
     { name: 'thumb', maxCount: 1 }
@@ -20,7 +21,7 @@ router.get('/:pid',[verifyAccessToken, isAdmin], ctrlsProducts.getProduct);//vid
 ]), ctrls.createProduct);*/ 
 
 /*
-router.put('/ratings', verifyAccessToken, ctrls.ratings);
+
 router.put('/uploadimg/:pid', [verifyAccessToken, isAdmin], upload.array('images', 10), ctrls.uploadImgsPro);
 
 

@@ -5,14 +5,10 @@ const crypto = require('crypto');
 // cột ~ collection 
 // hàng ~ documment
 var adminSchema = new mongoose.Schema({
-    firstname: { //<-- collection
+    name: { //<-- collection
         type: String,
         required: true,
         //required: true là môngo hiểu nó sẽ là dữ liệu bắt buộc phải có trong bảng
-    },
-    lastname: {
-        type: String,
-        required: true,
     },
     email: {
         type: String,

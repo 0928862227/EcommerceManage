@@ -26,25 +26,28 @@ const verifyAccessToken = asyncHandler(async (req, res, next) => {
         })
     }
 })
-
-//------------Phân quyền Admin---------------\\
-const isAdmin = asyncHandler((req, res, next) => {
-    const { role } = req.user
-    if (+role !== 1945)
+       /*  Admin là 1945
+        User là 1975
+        Sales là 1999 */
+//------------Phân biệt Admin---------------\\
+const isAdmin = asyncHandler((reqAdmin, res, next) => {
+    const { role } = reqAdmin.user
+    //Nếu role là 1975 thì ra tới hàm next
+    if (+role !== 1975 )
         return res.status(401).json({
             success: false,
-            mes: 'Yêu cầu trao quyền quản trị viên'
+            mes: 'Bạn không phải là quản trị viên'
         })
     next()
 })
 
-//------------Phân quyền Sales-----------------\\
+//------------Phân biệt Sales-----------------\\
 const isSales = asyncHandler((req, res, next) => {
     const { role } = req.user
-    if (+role !== 1999)
+    if (+role !== 1999 )
         return res.status(401).json({
             success: false,
-            mes: 'Yêu cầu trao quyền người bán hàng'
+            mes: 'Bạn không phải là người bán hàng'
         })
     next()
 })

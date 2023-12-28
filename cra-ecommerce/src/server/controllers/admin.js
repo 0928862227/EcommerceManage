@@ -13,9 +13,9 @@ const { Admins } = require('../ultils/contants') */
 
 //----------ĐĂNG KÝ-TẠO TÀI KHOẢN-----------//
 
- const register = asyncHandler(async (req, res) => {
-     const { email, password, firstname, lastname } = req.body;
-     if (!email || !password || !firstname || !lastname)
+ const register = asyncHandler(async (reqAdmin, res) => {
+     const { email, password, name } = reqAdmin.body;
+     if (!email || !password || !name)
          return res.status(400).json({
              success: false,
             mes: 'Thiếu thông tin'
@@ -25,7 +25,7 @@ const { Admins } = require('../ultils/contants') */
      if (admin)
          throw new Error('Tài khoản này đã tồn tại');
    else {
-         const newAdmin = await Admin.create(req.body);
+         const newAdmin = await Admin.create(reqAdmin.body);
          return res.status(200).json({
              success: newAdmin ? true : false,
              mes: newAdmin ? 'Đăng ký thành công .Bạn đã trở thành quản trị viên ! Hãy đăng nhập ' : 'Có sai sót gì đó .Hãy thử lại sau'
@@ -79,8 +79,8 @@ const { Admins } = require('../ultils/contants') */
 
 // Refresh token => Cấp mới access token
 // Access token => Xác thực người dùng, quân quyên người dùng
-const login = asyncHandler(async (req, res) => {
-    const { email, password } = req.body
+const login = asyncHandler(async (reqAdmin, res) => {
+    const { email, password } = reqAdmin.body
     if (!email || !password)
         return res.status(400).json({
             success: false,

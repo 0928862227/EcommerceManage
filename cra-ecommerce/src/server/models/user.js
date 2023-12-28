@@ -4,6 +4,7 @@ const crypto = require('crypto');
 // Declare the Schema of the Mongo model
 // cột ~ collection 
 // hàng ~ documment
+// khóa-giá trị là một element trong document.
 var userSchema = new mongoose.Schema({
     firstname: { //<-- collection
         type: String,
@@ -46,6 +47,13 @@ var userSchema = new mongoose.Schema({
     //lưu những id của bảng product vào mảng dưới ,giống khóa phụ trong sql
     wistlist: [
         { type: mongoose.Types.ObjectId, ref: 'Product' }
+    ],
+    //id những đơn hàng đã thanh toán 
+    idBill : [ 
+        {
+            type: String,
+            boughtBy: { type: mongoose.Types.ObjectId, ref: 'User' },
+        },
     ],
     //khóa tài khoản 
     isBlocked: {

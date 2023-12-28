@@ -63,7 +63,7 @@
   
 }
 .navbar_left a {
-  color: #fff;/* Màu chữ mặc định */
+  color: #C0C0C0;/* Màu chữ mặc định */
   text-decoration: none; /* Loại bỏ gạch chân dưới của liên kết */
   font-size: 12px; /* kích thước chữ*/
   font-weight: bolder; /* chữ đậm */
@@ -83,7 +83,7 @@
   justify-content: flex-end; /* Đưa các mục về phía bên phải */
 }
 .navbar_right a {
-  color: #fff;
+  color: #C0C0C0;
   text-decoration: none; /* Loại bỏ gạch chân dưới của liên kết */
   font-size: 12px; /* kích thước chữ*/
   font-weight: bolder; /* chữ đậm */
@@ -100,13 +100,13 @@
   position: absolute;
   height: 100%;
   width: 1px;
-  background-color: #ccc; /* Màu của thanh ngăn */
+  background-color: #C0C0C0; /* Màu của thanh ngăn */
   right: -5px; /* Điều chỉnh khoảng cách của thanh ngăn từ mục */
   top: 4px;
 }
 .navbar_left li:hover a,
 .navbar_right li:hover a {
-  color: #090a0b; /* Màu chữ khi con trỏ chuột vào */
+  color: #FFFF; /* Màu chữ khi con trỏ chuột vào */
 }
 .navbar_right .lastItem::after ,
 .navbar_left .lastItem::after{
@@ -125,6 +125,9 @@
 .icons_cart > * {
   margin:0 30px 0 30px;
   display: flex;
+  color: #C0C0C0;
+  font-size: 32px;
+  /* color:linear-gradient(10000deg, #C0C0C0, #fff); */
   
 }
 
