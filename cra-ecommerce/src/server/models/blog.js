@@ -12,10 +12,17 @@ var blogSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    //liên kết bảng BlogCategory - Danh mục diễn đàn
     category: {
         type: String,
         required: true,
     },
+    //Mã giảm giá
+    coupon:{
+        type: String,
+        /* required: true, */
+    },
+    //Số lượt xem 
     numberViews: {
         type: Number,
         default: 0,
@@ -32,6 +39,7 @@ var blogSchema = new mongoose.Schema({
             ref: 'User'
         }
     ],
+    // ảnh diễn đàn
     image: {
         type: String,
         default: 'https://beautifulthemes.com/blog/wp-content/uploads/2019/12/How-to-Hide-the-Featured-Image-in-WordPress-Posts.jpg',
@@ -42,9 +50,9 @@ var blogSchema = new mongoose.Schema({
     }
 }, {
     timestamps: true,
-    toJSON: { virtuals: true },
+    toJSON: { virtuals: true },//video13-10:00
     toObject: { virtuals: true },
 });
 
-//Export the model
+
 module.exports = mongoose.model('Blog', blogSchema);

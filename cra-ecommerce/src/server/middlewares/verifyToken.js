@@ -30,8 +30,8 @@ const verifyAccessToken = asyncHandler(async (req, res, next) => {
         User là 1975
         Sales là 1999 */
 //------------Phân biệt Admin---------------\\
-const isAdmin = asyncHandler((reqAdmin, res, next) => {
-    const { role } = reqAdmin.user
+const isAdmin = asyncHandler((reqA, res, next) => {
+    const { role } = reqA.user
     //Nếu role là 1975 thì ra tới hàm next
     if (+role !== 1975 )
         return res.status(401).json({

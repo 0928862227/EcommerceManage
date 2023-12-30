@@ -1,4 +1,4 @@
-const Sales = require('../models/sales');
+const Sale = require('../models/sales');
 const asyncHandler = require('express-async-handler');
 const { generateAccessToken, generateRefreshToken } = require('../middlewares/jwt');
 const jwt = require('jsonwebtoken');
@@ -15,8 +15,8 @@ const { Saless } = require('../ultils/contants') */
 
 //----------ĐĂNG KÝ-TẠO TÀI KHOẢN-----------//
 
- const register = asyncHandler(async (req, res) => {
-     const { email, password, firstname, lastname, businessNumber, agentCode, } = req.body;
+ const register = asyncHandler(async (reqS, res) => {
+     const { email, password, firstname, lastname, businessNumber, agentCode, } = reqS.body;
      if (!email || !password || !firstname || !lastname || !businessNumber || !agentCode)
          return res.status(400).json({
              success: false,
@@ -81,8 +81,8 @@ const { Saless } = require('../ultils/contants') */
 
 // Refresh token => Cấp mới access token
 // Access token => Xác thực người dùng, quân quyên người dùng
-const login = asyncHandler(async (req, res) => {
-    const { email, password } = req.body
+const login = asyncHandler(async (reqS, res) => {
+    const { email, password } = reqS.body
     if (!email || !password)
         return res.status(400).json({
             success: false,
@@ -121,8 +121,8 @@ const login = asyncHandler(async (req, res) => {
 
 //---------------Lấy thông tin hiện tại của Sales---------------\\
 
-const getCurrent = asyncHandler(async (req, res) => {
-    const { _id } = req.Sales
+const getCurrent = asyncHandler(async (reqS, res) => {
+    const { _id } = reqS.Sale
     //ko hiển thị 3 tt role ,password,..
     const Sales = await Sales.findById(_id).select('-refreshToken -password -role')
     /* .populate({

@@ -11,10 +11,10 @@ const asyncHandler = require('express-async-handler')
 const makeToken = require('uniqid');
 const { Admins } = require('../ultils/contants') */
 
-//----------ĐĂNG KÝ-TẠO TÀI KHOẢN-----------//
+/* Admin đăng ký tài khoản  */
 
- const register = asyncHandler(async (reqAdmin, res) => {
-     const { email, password, name } = reqAdmin.body;
+ const register = asyncHandler(async (reqA, res) => {
+     const { email, password, name } = reqA.body;
      if (!email || !password || !name)
          return res.status(400).json({
              success: false,
@@ -25,7 +25,7 @@ const { Admins } = require('../ultils/contants') */
      if (admin)
          throw new Error('Tài khoản này đã tồn tại');
    else {
-         const newAdmin = await Admin.create(reqAdmin.body);
+         const newAdmin = await Admin.create(reqA.body);
          return res.status(200).json({
              success: newAdmin ? true : false,
              mes: newAdmin ? 'Đăng ký thành công .Bạn đã trở thành quản trị viên ! Hãy đăng nhập ' : 'Có sai sót gì đó .Hãy thử lại sau'
@@ -79,8 +79,8 @@ const { Admins } = require('../ultils/contants') */
 
 // Refresh token => Cấp mới access token
 // Access token => Xác thực người dùng, quân quyên người dùng
-const login = asyncHandler(async (reqAdmin, res) => {
-    const { email, password } = reqAdmin.body
+const login = asyncHandler(async (reqA, res) => {
+    const { email, password } = reqA.body
     if (!email || !password)
         return res.status(400).json({
             success: false,
@@ -119,8 +119,8 @@ const login = asyncHandler(async (reqAdmin, res) => {
 
 //---------------Lấy thông tin hiện tại của Admin---------------\\
 
-const getCurrent = asyncHandler(async (req, res) => {
-    const { _id } = req.Admin
+const getCurrent = asyncHandler(async (reqA, res) => {
+    const { _id } = reqA.Admin
     //ko hiển thị 3 tt role ,password,..
     const Admin = await Admin.findById(_id).select('-refreshToken -password -role')
     /* .populate({
@@ -139,16 +139,16 @@ const getCurrent = asyncHandler(async (req, res) => {
 
 //-------Tạo accessToken mới khi refreshToken vẫn còn hạn-------\\
 
-const refreshAccessToken = asyncHandler(async (req, res) => {
+const refreshAccessToken = asyncHandler(async (reqA, res) => {
     // Lấy token từ cookies
-    const cookie = req.cookies
+    const cookie = reqA.cookies
     // Check xem có token hay không
     if (!cookie && !cookie.refreshToken) throw new Error('Không tìm thấy refreshToken trong cookie')
     // Check token có hợp lệ hay không
     const rs = await jwt.verify(cookie.refreshToken, "${process.env.JWT_SECRET} ")
     // check xem refreshToken có khớp với refreshToken đã lưu trong db hay k?
     const response = await Admin.findOne({ _id: rs._id, refreshToken: cookie.refreshToken })
-    return res.status(200).json({
+    return resA.status(200).json({
         success: response ? true : false,
         newAccessToken: response ? generateAccessToken(response._id, response.role) : 'Refresh token không khớp!'
     })
@@ -156,9 +156,9 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
 
 //----------------ĐĂNG XUẤT---------------------\\
 
-const logout = asyncHandler(async (req, res) => {
+const logout = asyncHandler(async (reqA, res) => {
     //check xem Admin đang ở trạng thái đăng nhập hay không?
-    const cookie = req.cookies
+    const cookie = reqA.cookies
     if (!cookie || !cookie.refreshToken) 
     throw new Error('Không có refreshToken trong cookie! Nếu đăng xuất thì lần sau phải đăng nhập lại!!')
     // Xóa refresh token trong db
@@ -336,7 +336,7 @@ const getAdmins = asyncHandler(async (req, res) => {
 const deleteAdmin = asyncHandler(async (req, res) => {
     const { aid } = req.params
     if (!aid) throw new Error('Chưa nhập id admin')
-    const response = await Admin.findByIdAndDelete(uid)
+    const response = await Admin.findByIdAndDelete(aid)
     return res.status(200).json({
         success: response ? true : false,
         mes: response ? `Admin có email ${response.email} đã được xóa` : 'Người dùng không bị xóa'

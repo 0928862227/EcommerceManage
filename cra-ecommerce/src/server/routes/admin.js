@@ -3,7 +3,7 @@ const ctrlsAdmin = require('../controllers/admin');
 const { verifyAccessToken, isAdmin } = require('../middlewares/verifyToken');
 /*const upload = require('../config/cloudinary.config'); */
 //đây là những link api 
-router.post('/register', ctrlsAdmin.register);//video2-38
+router.post('/register',[verifyAccessToken, isAdmin], ctrlsAdmin.register);//video2-38
 router.post('/login', ctrlsAdmin.login);//video4-29:25
 router.get('/current', verifyAccessToken, ctrlsAdmin.getCurrent);//video5-42:03
 router.post('/refreshtoken', ctrlsAdmin.refreshAccessToken);//video6-21:29
