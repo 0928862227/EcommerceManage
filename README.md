@@ -1,5 +1,10 @@
 Dự án Ecom - Trải Nghiệm Mua Sắm Trực Tuyến Đa Dạng
 
+<br><br>
+![](https://github.com/amandewatnitrr/amandewatnitrr/blob/main/header_.png)
+<div>
+<img align="right" src="https://github.com/amandewatnitrr/amandewatnitrr/blob/main/terminal.gif" width="40%"/>
+  <br>
 Chào mừng đến với Ecom, nơi mà trải nghiệm mua sắm trực tuyến không chỉ đơn giản là việc mua và bán, mà còn là hành trình tương tác đa chiều giữa ba đối tượng chính: Admin, Người Dùng và Người Bán. Xây dựng trên nền tảng Node.js và ReactJS, Ecom không chỉ mang lại trải nghiệm mua sắm thuận tiện mà còn tối ưu hóa quản lý và giao tiếp.
 
 Các Tính Năng Nổi Bật:
@@ -31,14 +36,35 @@ Admin:
 Quản lý toàn bộ hệ thống và các người dùng khác.
 Giám sát doanh số bán hàng và thống kê liên quan.
 Quản lý và duyệt các người bán mới.
+
 Người Dùng:
 
 Trải nghiệm mua sắm tuyệt vời với giao diện thân thiện.
 Quản lý đơn hàng và theo dõi tình trạng giao hàng.
 Đánh giá và đánh giá sản phẩm.
+
+
 Người Bán:
 
 Tạo cửa hàng và quản lý sản phẩm một cách dễ dàng.
 Theo dõi doanh số bán hàng và phản hồi từ khách hàng.
 Tương tác với người dùng thông qua hệ thống tin nhắn tích hợp.
+### Languages and Tools:🍌
+
+
+![html5](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
+![css3](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
+![javascript](https://img.shields.io/badge/Javascript-F7DF1E?style=flat&logo=javascript&logoColor=1d1d1d)
+![Java](https://img.shields.io/badge/-Java-05122A?style=flat&logo=Java&logoColor=FFA518)&nbsp;
+![vuejs](https://img.shields.io/badge/VueJS-4FC08D?style=flat&logo=vue.js&logoColor=white)
+![mysql](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white)
+<br />
+<br />
+
 Ecom không chỉ là một nền tảng thương mại điện tử, mà là cầu nối giữa những người mua và người bán, mang lại trải nghiệm độc đáo và tối ưu. Hãy cùng trải nghiệm Ecom ngay hôm nay!
+
+##  🤝🏻 &nbsp;Connect with Me
+
+<p align="center">
+<a href="mailto:duongtoantrung942.@gmail.com"><img src="https://img.shields.io/badge/-duongtoantrung@gmail.com-D14836?style=flat-square&logo=Gmail&logoColor=white"/></a>
