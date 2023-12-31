@@ -235,8 +235,15 @@ Video 13 : Model Blog and coding API like the blog
     8. Viết thêm likeBlog 37:18, test in postman 51:31,v14-12:44 [Có thời gian nên tìm hiểu thêm!]
 
 Video 14 : Lấy dữ liệu giữa các collections sử dụng hàm populate
+
     1. Viết thêm dislikeBlog 1:38 ,test in Pm 3:23 => 14:44,15:14[Có thời gian nên tìm hiểu thêm!]
-    2. Tìm hiểu populate mongoose 16:14
+    2. Tìm hiểu function populate mongoose: Trong mongoDB tuy kh có khóa chính, khóa phụ giúp liên 
+    kết giữa các bảng nhưng sẽ có vài hàm hỗ trợ liên kết 
+    Hàm đầu tiên là hàm populate() : giúp đứng ở collectionA nhưng lấy Data ở collectionB 16:14
+    3. Viết function getBlog trong controller/blog 18:49
+    4. Test hàm getBlog trong pm 23:50 ,26:11
+    5. Viết hàm deleteBlog 31:57 .Test trong pm 33:37
+
 
 
     

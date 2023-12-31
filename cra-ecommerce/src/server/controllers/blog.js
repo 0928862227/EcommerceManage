@@ -96,11 +96,16 @@ const dislikeBlog = asyncHandler(async (req, res) => {
         });
     }
 })
-
+//vid14-26:11 - Hiển thị số người like diễn đàn 
 const excludeFields = '-refreshToken -password -mobile -role -createdaAt -updatedAd';
+//-----------------tìm diễn đàn---------------\\
 const getBlog = asyncHandler(async (req, res) => {
     const { bid } = req.params;
-    // const blog = await Blog.findById(bid).populate('likes', excludeFields).populate('dislikes', excludeFields);
+
+    //const blog = await Blog.findById(bid).populate('likes', excludeFields).populate('dislikes', excludeFields);
+
+    /* tính luôn số lượt view khi hàm này được gọi 
+    inc: là tăng lên 1 */
     const blog = await Blog.findByIdAndUpdate(bid, { $inc: { numberViews: 1 } }, { new: true })
         .populate('likes', 'firstname lastname')
         .populate('dislikes', 'firstname lastname');
@@ -116,8 +121,8 @@ const deleteBlog = asyncHandler(async (req, res) => {
     const blog = await Blog.findByIdAndDelete(bid)
     return res.json({
         success: blog ? true : false,
-        rs: blog,
-        deletedBlog: blog || 'Something went wrongs!!!',
+        //rs: blog,
+        deletedBlog: blog || 'Có gì đó không ổn!!!',
     })
 })
 
