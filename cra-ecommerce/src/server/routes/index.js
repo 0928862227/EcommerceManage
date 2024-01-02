@@ -6,6 +6,7 @@ const adminRouter = require('./admin');
 const productCategoryRouter = require('./productCategory'); //video12-20:01
 const blogCategoryRouter = require('./blogCategory');//video12-39:14
 const blogRouter = require('./blog');//video13-13:45
+const brandRouter = require('./brand');//video14-42:18
 /* 
 
 
@@ -24,11 +25,12 @@ const initRoutes = (app) => {
     app.use('/api/productCategory', productCategoryRouter);
     app.use('/api/blogCategory', blogCategoryRouter);
     app.use('/api/blog', blogRouter);
+    app.use('/api/brand', brandRouter);
     /* 
     
     
     
-    app.use('/api/brand', brandRouter);
+    
     app.use('/api/coupon', couponRouter);
     app.use('/api/order', orderRouter);
     app.use('/api/insert', insertRouter); */

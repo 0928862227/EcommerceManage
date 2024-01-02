@@ -45,7 +45,8 @@ Video 2 : Kết nối mongodb và tạo document user
                 already~ đã làm 1 việc gì đó..
                 medium score~ điểm trung bình
                 ctrl~controller
-
+                populate~cư trú
+                coupon~phiếu mua hàng
 
     xử lí folder routes/user (32)
     xử lí folder routes/index (36:44) để gọi links api các file cùng cấp
@@ -241,8 +242,14 @@ Video 14 : Lấy dữ liệu giữa các collections sử dụng hàm populate
     kết giữa các bảng nhưng sẽ có vài hàm hỗ trợ liên kết 
     Hàm đầu tiên là hàm populate() : giúp đứng ở collectionA nhưng lấy Data ở collectionB 16:14
     3. Viết function getBlog trong controller/blog 18:49
-    4. Test hàm getBlog trong pm 23:50 ,26:11
+    4. Test hàm getBlog trong pm 23:50 ,26:11 (áp dụng hàm populate ở đây)
     5. Viết hàm deleteBlog 31:57 .Test trong pm 33:37
+    6. Tạo Đối tượng mới Hóa đơn (Bill) trong models 35:23,
+    7. Viết bảng data Thương hiệu (brand) trong models 36:13    
+    8. Viết CRUD Thương hiệu (brand) trong controllers. C_38:28/
+    9. Test CRUD brand trong pm C_43:37/R_44:25/U_45:14/D_46:13.  
+    10. Viết bảng data phiếu mua hàng(coupon) trong model 47:08  
+
 
 
 
