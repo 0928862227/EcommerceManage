@@ -248,7 +248,14 @@ Video 14 : Lấy dữ liệu giữa các collections sử dụng hàm populate
     7. Viết bảng data Thương hiệu (brand) trong models 36:13    
     8. Viết CRUD Thương hiệu (brand) trong controllers. C_38:28/
     9. Test CRUD brand trong pm C_43:37/R_44:25/U_45:14/D_46:13.  
-    10. Viết bảng data phiếu mua hàng(coupon) trong model 47:08  
+    10. Viết bảng data phiếu mua hàng(coupon) trong model 47:08 
+
+Video 15 : CRUD coupons - Configuration cloudinary with multer & nodejs
+
+    1. Viét CRUD phiếu mua hàng (coupon) trong controllers 0:29
+    2. C_1:45/R_11:15/U_13:38,D_20:00 => router C_4:12/R_12:27/U_15:48/D_20:25
+    3. Test CRUD COUPON trong pm C_5:50/R_13:00/U_16:00/D_20:50.
+
 
 
 
